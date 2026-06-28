@@ -21,19 +21,19 @@ This repository contains a modular and unified Bioinformatics pipeline for inves
 ### Principal Component Analysis (PCA)
 *Strong biological separation between ZIKV-infected and Mock samples.*
 <p align="center">
-  <img src="assets/pca_plot.png" alt="PCA Plot" width="600"/>
+  <img src="GSE265922/Results/QC/04_Publication_PCA_ZIKV_vs_Mock.png" alt="PCA Plot" width="600"/>
 </p>
 
 ### Differential Expression Volcano Plot
 *Identification of significantly upregulated and downregulated genes during infection (ZIKV vs Mock).*
 <p align="center">
-  <img src="assets/volcano_plot.png" alt="Volcano Plot" width="600"/>
+  <img src="GSE265922/Results/Plots/03_Publication_Volcano_ZIKV_vs_Mock.png" alt="Volcano Plot" width="600"/>
 </p>
 
 ### KEGG Pathway Enrichment
 *Pathways perturbed by ZIKV infection, emphasizing innate immune and viral responses.*
 <p align="center">
-  <img src="assets/kegg_dotplot.png" alt="KEGG Enrichment" width="700"/>
+  <img src="GSE265922/Results/Enrichment/GSE265922_All_Significant_DEG_KEGG_Publication_Dotplot.png" alt="KEGG Enrichment" width="700"/>
 </p>
 
 ---
