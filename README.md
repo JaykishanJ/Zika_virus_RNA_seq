@@ -16,16 +16,16 @@ This repository contains a modular and unified Bioinformatics pipeline for inves
 
 ---
 
-## 📊 Key Results
+## 📊 Key Results (GSE265922)
 
 ### Principal Component Analysis (PCA)
-*Strong biological separation between ZIKV-infected and control samples.*
+*Strong biological separation between ZIKV-infected and Mock samples.*
 <p align="center">
   <img src="assets/pca_plot.png" alt="PCA Plot" width="600"/>
 </p>
 
 ### Differential Expression Volcano Plot
-*Identification of significantly upregulated and downregulated genes during infection.*
+*Identification of significantly upregulated and downregulated genes during infection (ZIKV vs Mock).*
 <p align="center">
   <img src="assets/volcano_plot.png" alt="Volcano Plot" width="600"/>
 </p>
