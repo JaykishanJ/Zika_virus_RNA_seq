@@ -1,29 +1,101 @@
-# Zika Virus RNA-seq Meta-Analysis
+<div align="center">
+  <h1>🧬 Zika Virus RNA-seq Meta-Analysis</h1>
+  <p><strong>A comprehensive, reproducible pipeline for analyzing transcriptional responses to ZIKV infection in A549 cells.</strong></p>
 
-This repository contains the code and methodology for a comprehensive RNA-seq meta-analysis investigating the transcriptional response of A549 cells to Zika Virus (ZIKV) infection. 
+  <img src="https://img.shields.io/badge/Language-R-blue?style=for-the-badge&logo=r" alt="R" />
+  <img src="https://img.shields.io/badge/Bioconductor-DESeq2-green?style=for-the-badge" alt="DESeq2" />
+  <img src="https://img.shields.io/badge/Environment-renv-orange?style=for-the-badge" alt="renv" />
+  <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" alt="License" />
+</div>
 
-## Datasets
-The analysis combines two independent datasets from NCBI GEO:
-- **GSE146423**: RNA-seq of A549 cells (ZIKV vs Control), analyzed using NCBI-generated raw gene counts.
-- **GSE265922**: RNA-seq of A549 cells (ZIKV vs Mock), analyzed using STAR unstranded reads.
+<br>
 
-## Project Structure
-The project is organized as an RStudio project (`Zika_virus_wetlab.Rproj`) to ensure portability and reproducibility via the `here` package.
+## 📖 Overview
 
-- `R/`: Contains shared utility functions (`utils.R`) and plotting functions (`plot_functions.R`) to keep the codebase DRY and maintain consistent publication-ready aesthetics.
-- `GSE146423/`: Contains the specific differential expression analysis script for the GSE146423 dataset (`DEG_GSE146423.R`).
-- `GSE265922/`: Contains the specific differential expression analysis script for the GSE265922 dataset (`DEG_GES265922.R`).
-- `Meta_Analysis/`: Contains the script (`Meta_Analysis.R`) that merges the count matrices from both datasets and runs a unified DESeq2 model, controlling for batch effects between the two studies (`~ Dataset + Condition`).
-- `setup_renv.R`: A script to initialize `renv` for dependency tracking.
+This repository contains a modular and unified Bioinformatics pipeline for investigating the host cellular response to Zika Virus (ZIKV). The analysis integrates independent transcriptomic datasets using a meta-analysis approach to correct for batch effects and isolate high-confidence Differentially Expressed Genes (DEGs) and perturbed pathways.
 
-## Reproducibility
-This project uses `renv` to manage R package dependencies. 
-1. Open `Zika_virus_wetlab.Rproj` in RStudio.
-2. Run `source("setup_renv.R")` to initialize the environment and install necessary dependencies.
+---
 
-## Output Structure
-Each analysis script (including the meta-analysis) generates its outputs locally within its respective directory under a `Results/` folder.
-- `Results/Counts/`: Count matrices.
-- `Results/QC/`: Quality control plots (PCA, dispersion, sample correlation).
-- `Results/Tables/`: DESeq2 output tables, significant DEG lists, and GO/KEGG enrichment tables.
-- `Results/Plots/`: Publication-ready visualizations (Volcano plots, MA plots, Heatmaps, etc.) in both high-res PNG and PDF formats.
+## 📊 Key Results
+
+### Principal Component Analysis (PCA)
+*Strong biological separation between ZIKV-infected and control samples.*
+<p align="center">
+  <img src="assets/pca_plot.png" alt="PCA Plot" width="600"/>
+</p>
+
+### Differential Expression Volcano Plot
+*Identification of significantly upregulated and downregulated genes during infection.*
+<p align="center">
+  <img src="assets/volcano_plot.png" alt="Volcano Plot" width="600"/>
+</p>
+
+### KEGG Pathway Enrichment
+*Pathways perturbed by ZIKV infection, emphasizing innate immune and viral responses.*
+<p align="center">
+  <img src="assets/kegg_dotplot.png" alt="KEGG Enrichment" width="700"/>
+</p>
+
+---
+
+## 🧬 Datasets
+
+This meta-analysis leverages two publicly available datasets from NCBI GEO:
+
+| GEO Accession | Cell Line | Condition | Input Source |
+| :--- | :--- | :--- | :--- |
+| **[GSE146423](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE146423)** | A549 | ZIKV vs Control | NCBI Gene Counts |
+| **[GSE265922](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE265922)** | A549 | ZIKV vs Mock | STAR Unstranded Reads |
+
+---
+
+## 🏗️ Project Architecture
+
+The pipeline is built strictly applying DRY (Don't Repeat Yourself) principles. Shared helper functions and plotting aesthetics are globally defined, making individual dataset analysis scripts lightweight and readable.
+
+```text
+📦 Zika_virus_RNA_seq
+ ┣ 📂 R/
+ ┃ ┣ 📜 utils.R               # Universal data handling & renv utilities
+ ┃ ┗ 📜 plot_functions.R      # ggplot2 publication-ready themes and save wrappers
+ ┣ 📂 GSE146423/
+ ┃ ┗ 📜 DEG_GSE146423.R       # Standalone pipeline for GSE146423
+ ┣ 📂 GSE265922/
+ ┃ ┗ 📜 DEG_GES265922.R       # Standalone pipeline for GSE265922
+ ┣ 📂 Meta_Analysis/
+ ┃ ┗ 📜 Meta_Analysis.R       # The unified batch-corrected DESeq2 meta-analysis
+ ┣ 📂 assets/                 # Preview graphics for README
+ ┣ 📜 setup_renv.R            # 1-click dependency bootstrapper
+ ┗ 📜 Zika_virus_wetlab.Rproj # RStudio portable project file
+```
+
+---
+
+## 🚀 Quick Start & Reproducibility
+
+This project uses `renv` to guarantee the exact package versions used during the original analysis. You can clone this repository and reproduce it anywhere (Mac, Windows, Linux) without worrying about broken dependencies.
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/JaykishanJ/Zika_virus_RNA_seq.git
+   cd Zika_virus_RNA_seq
+   ```
+2. **Open the R Project:**
+   Open `Zika_virus_wetlab.Rproj` in RStudio.
+3. **Initialize the Environment:**
+   Run the bootstrapping script to restore packages:
+   ```R
+   source("setup_renv.R")
+   ```
+4. **Execute the pipelines:**
+   - For individual analyses, source `GSE146423/DEG_GSE146423.R` or `GSE265922/DEG_GES265922.R`.
+   - For the joint Meta-Analysis, run `Meta_Analysis/Meta_Analysis.R`.
+
+Outputs (QC plots, Count Matrices, Significant DEGs, and GSEA graphics) will automatically generate into cleanly isolated `Results/` folders within each respective directory!
+
+---
+
+## 📝 Acknowledgments
+
+* Analysis conceptualized and executed using R, DESeq2, and clusterProfiler.
+* Visualizations generated via ggplot2 and EnhancedVolcano.
