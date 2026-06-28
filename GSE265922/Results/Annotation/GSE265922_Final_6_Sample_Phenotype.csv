@@ -1,0 +1,13 @@
+"geo_accession","SampleID","Condition","Replicate","Cell_Line","Treatment","Condition_Label","Plot_Label"
+"GSM8231986","Z1","ZIKV","rep1","A549","ZIKV infected","ZIKV infected","Z1
+ZIKV infected"
+"GSM8231987","Z2","ZIKV","rep2","A549","ZIKV infected","ZIKV infected","Z2
+ZIKV infected"
+"GSM8231988","Z3","ZIKV","rep3","A549","ZIKV infected","ZIKV infected","Z3
+ZIKV infected"
+"GSM8231989","M1","Mock","rep1","A549","Mock","Mock control","M1
+Mock control"
+"GSM8231990","M2","Mock","rep2","A549","Mock","Mock control","M2
+Mock control"
+"GSM8231991","M6","Mock","rep6","A549","Mock","Mock control","M6
+Mock control"

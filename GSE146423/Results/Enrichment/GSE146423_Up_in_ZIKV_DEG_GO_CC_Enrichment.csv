@@ -1,0 +1,2 @@
+"ID","Description","GeneRatio","BgRatio","RichFactor","FoldEnrichment","zScore","pvalue","p.adjust","qvalue","geneID","Count"
+"GO:0036464","cytoplasmic ribonucleoprotein granule","8/105","248/19979",0.032258064516129,6.13794162826421,5.91791154243723,4.97908682652501e-05,0.0380900142229163,0.0380900142229163,"TDRD7/TRIM25/ZNFX1/PATL2/SHFL/HELZ2/TRIM21/PARP12",8

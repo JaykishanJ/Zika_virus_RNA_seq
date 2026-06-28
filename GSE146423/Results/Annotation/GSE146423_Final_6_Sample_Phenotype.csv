@@ -1,0 +1,13 @@
+"geo_accession","SampleID","Condition","Replicate","Cell_Line","Treatment","Condition_Label","Plot_Label"
+"GSM4385296","C1","Control","rep1","A549","A549 Control","Control","C1
+Control"
+"GSM4385297","C2","Control","rep2","A549","A549 Control","Control","C2
+Control"
+"GSM4385298","C3","Control","rep3","A549","A549 Control","Control","C3
+Control"
+"GSM4385299","ZIKV1","ZIKV","rep1","A549","A549 infected with Zika virus","ZIKV infected","ZIKV1
+ZIKV infected"
+"GSM4385300","ZIKV2","ZIKV","rep2","A549","A549 infected with Zika virus","ZIKV infected","ZIKV2
+ZIKV infected"
+"GSM4385301","ZIKV3","ZIKV","rep3","A549","A549 infected with Zika virus","ZIKV infected","ZIKV3
+ZIKV infected"
