@@ -38,14 +38,3 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-
-# Results/Raw (Large files typically not suitable for GitHub)
-*/Results/Raw/
-*/Results/Counts/
-*/Results/Plots/
-*/Results/QC/
-*/Results/Tables/
-Meta_Analysis/Results/
-
-# .gz files
-*.gz

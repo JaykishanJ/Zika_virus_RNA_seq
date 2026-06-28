@@ -1,0 +1,2 @@
+"Dataset","Contrast","Reference_group","Test_group","Count_type","Total_genes_raw","Total_genes_after_filtering","FDR_cutoff","log2FC_cutoff","Significant_DEG","Up_in_ZIKV","Down_in_ZIKV","Log2FC_interpretation"
+"GSE265922","ZIKV_vs_Mock","Mock","ZIKV","STAR ReadsPerGene unstranded count column",60683,20456,0.05,1,11128,6400,4728,"Positive log2FC means higher expression in ZIKV infected cells"

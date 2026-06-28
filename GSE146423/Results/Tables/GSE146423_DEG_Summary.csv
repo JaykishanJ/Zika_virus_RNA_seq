@@ -1,0 +1,2 @@
+"Dataset","Contrast","Reference_group","Test_group","Count_type","Total_genes_raw","Total_genes_after_filtering","FDR_cutoff","log2FC_cutoff","Significant_DEG","Up_in_ZIKV","Down_in_ZIKV","Log2FC_interpretation"
+"GSE146423","ZIKV_vs_Control","Control","ZIKV","NCBI/GEO-generated raw RNA-seq gene counts",39376,21410,0.05,1,130,121,9,"Positive log2FC means higher expression in ZIKV infected cells"
